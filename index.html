@@ -141,17 +141,49 @@
       font-size:13px;
       backdrop-filter: blur(10px);
     }
-  </style>
+ .collage{
+  position:fixed;
+  inset:0;
+  z-index:1;
+  background:#000;
+  overflow:hidden;
+}
+
+.frame{
+  position:absolute;
+  width:150px;
+  height:210px;
+  border-radius:18px;
+  overflow:hidden;
+  border:2px solid rgba(255,255,255,0.25);
+  box-shadow:0 18px 50px rgba(0,0,0,0.65);
+  background:rgba(255,255,255,0.08);
+}
+
+.frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.f1{top:18px; left:18px; transform:rotate(-8deg);}
+.f2{top:18px; right:18px; transform:rotate(8deg);}
+.f3{top:35%; left:12px; transform:rotate(-5deg);}
+.f4{top:35%; right:12px; transform:rotate(6deg);}
+.f5{bottom:18px; left:18px; transform:rotate(7deg);}
+.f6{bottom:18px; right:18px; transform:rotate(-7deg);} </style>
 </head>
 
 <body>
 
-  <div class="slide active" style="background-image:url('1.jpg.jpeg')"></div>
-<div class="slide" style="background-image:url('2.jpg.jpeg')"></div>
-<div class="slide" style="background-image:url('3.jpg.jpeg')"></div>
-<div class="slide" style="background-image:url('4.jpg.jpeg')"></div>
-<div class="slide" style="background-image:url('5.jpg.jpeg')"></div>
-<div class="slide" style="background-image:url('6.jpg.jpeg')"></div>
+ <div class="collage">
+  <div class="frame f1"><img src="1.jpg.jpeg"></div>
+  <div class="frame f2"><img src="2.jpg.jpeg"></div>
+  <div class="frame f3"><img src="3.jpg.jpeg"></div>
+  <div class="frame f4"><img src="4.jpg.jpeg"></div>
+  <div class="frame f5"><img src="5.jpg.jpeg"></div>
+  <div class="frame f6"><img src="6.jpg.jpeg"></div>
+</div>
 
   <div class="overlay"></div>
 
