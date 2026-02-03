@@ -7,7 +7,43 @@
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto;}
-    body{
+    <audio id="bgm" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button id="playMusic"
+  style="
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:9999;
+    padding:12px 18px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,0.18);
+    background:rgba(255,255,255,0.12);
+    color:white;
+    font-weight:800;
+    cursor:pointer;
+    backdrop-filter: blur(10px);
+  ">
+  ▶ Tap to Play Music
+</button>
+
+<script>
+  const bgm = document.getElementById("bgm");
+  const btn = document.getElementById("playMusic");
+
+  btn.addEventListener("click", async () => {
+    try{
+      await bgm.play();
+      btn.innerText = "🎵 Music Playing";
+      setTimeout(()=> btn.style.display="none", 1500);
+    }catch(e){
+      alert("Tap again ✅");
+    }
+  });
+</script> body{
       height:100vh;
       background:#000;
       overflow:hidden;
